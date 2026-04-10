@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компания "ТехноПрофи" | IT-решения для бизнеса</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-laptop-code"></i>
+            <span>ТехноПрофи</span>
+        </div>
+        <nav>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a>
+            <a href="about.html"><i class="fas fa-users"></i> О нас</a>
+            <a href="services.html"><i class="fas fa-concierge-bell"></i> Услуги</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> Контакты</a>
+        </nav>
+    </div>
+</header>
+
+    <!-- Главный контент -->
+    <main class="container">
+        <!-- Герой-баннер -->
+        <section class="hero">
+            <h1>Профессиональные IT-решения для вашего бизнеса</h1>
+            <p class="hero-description">Разрабатываем современные веб-сайты, мобильные приложения и облачные решения. Интегрируем системы онлайн-чатов для улучшения взаимодействия с клиентами.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="chat-toggle">
+                    <i class="fas fa-comment-dots"></i> Начать диалог в чате
+                </button>
+                <a href="services.html" class="btn">
+                    <i class="fas fa-concierge-bell"></i> Наши услуги
+                </a>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="features">
+            <h2>Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Современные технологии</h3>
+                    <p>Используем последние версии фреймворков и библиотек для создания быстрых и надежных решений.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Онлайн-чат всегда на связи. Отвечаем на вопросы клиентов в любое время суток.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасность данных</h3>
+                    <p>Внедряем системы шифрования и защиты от кибератак для вашего спокойствия.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Аналитика и отчетность</h3>
+                    <p>Предоставляем детальную статистику по работе чата и взаимодействию с клиентами.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Адаптивный дизайн</h3>
+                    <p>Наши решения одинаково хорошо работают на компьютерах, планшетах и смартфонах.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Интеграция с CRM</h3>
+                    <p>Легко подключаем чат к вашей CRM-системе для автоматизации бизнес-процессов.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Демонстрация онлайн-чата -->
+        <section class="chat-demo">
+            <h2><i class="fas fa-comments"></i> Демонстрация интеграции онлайн-чата</h2>
+            <p>В рамках дипломного проекта реализована интеграция системы онлайн-чата Tawk.to на корпоративный сайт. Виджет чата работает в правом нижнем углу страницы и позволяет вести диалоги с посетителями в реальном времени.</p>
+            
+            <div class="chat-placeholder">
+                <div id="tawk-status">
+                    <i class="fas fa-check-circle" style="color: #27ae60; font-size: 4rem; margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 1.8rem; color: #2c3e50; margin-bottom: 15px;">Система онлайн-чата активна</h3>
+                    <p style="font-size: 1.1rem; color: #666; margin-bottom: 10px;">Виджет Tawk.to успешно интегрирован на все страницы сайта.</p>
+                    <p style="font-size: 1.1rem; color: #666;">Для тестирования откройте сайт в двух браузерах и начните диалог.</p>
+                    
+                    <div class="test-buttons">
+                        <button id="test-open" class="test-btn">
+                            <i class="fas fa-external-link-alt"></i> Открыть окно чата
+                        </button>
+                        <button id="test-hide" class="test-btn">
+                            <i class="fas fa-eye-slash"></i> Скрыть виджет
+                        </button>
+                        <button id="test-show" class="test-btn" style="display:none;">
+                            <i class="fas fa-eye"></i> Показать виджет
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Технические детали</h4>
+                        <p style="font-size: 0.95rem; color: #555; margin: 5px 0;"><strong>Сервис:</strong> Tawk.to</p>
+                        <p style="font-size: 0.95rem; color: #555; margin: 5px 0;"><strong>Тип интеграции:</strong> JavaScript Widget</p>
+                        <p style="font-size: 0.95rem; color: #555; margin: 5px 0;"><strong>Статус:</strong> <span id="widget-status" style="color: #27ae60; font-weight: bold;">активен</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Компания "ТехноПрофи". Дипломный проект по теме: "Интеграция системы онлайн-чата и поддержки клиентов на корпоративный сайт".</p>
+            <p>Все права защищены. <a href="index.html">Главная</a> | <a href="about.html">О нас</a> | <a href="services.html">Услуги</a> | <a href="contact.html">Контакты</a></p>
+            <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">Для связи: info@technoprofi.ru | +7 (495) 123-45-67</p>
+        </div>
+    </footer>
+
+    <!-- Код виджета Tawk.to -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/696d5803c0ef74197c0bf2b3/1jf9hvjrr';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script src="script.js"></script>
+</body>
+</html>

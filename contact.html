@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | ТехноПрофи</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- API Яндекс Карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ТехноПрофи</span>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <a href="about.html"><i class="fas fa-users"></i> О нас</a>
+                <a href="services.html"><i class="fas fa-concierge-bell"></i> Услуги</a>
+                <a href="contact.html" class="active"><i class="fas fa-phone-alt"></i> Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1><i class="fas fa-map-marker-alt"></i> Контакты</h1>
+            <p class="subtitle">Свяжитесь с нами любым удобным способом</p>
+        </section>
+
+        <div class="contact-simple">
+            <div class="contact-card">
+                <i class="fas fa-building"></i>
+                <h2>Адрес офиса</h2>
+                <p><strong>г. Ростов-на-Дону</strong></p>
+                <p>пер. Доломановский, д. 53</p>
+                <p>офис 305</p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h2>Телефоны</h2>
+                <p><strong>+7 (863) 123-45-67</strong></p>
+                <p>+7 (863) 987-65-43</p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h2>Электронная почта</h2>
+                <p><strong>info@technoprofi.ru</strong></p>
+                <p>support@technoprofi.ru</p>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-clock"></i>
+                <h2>Режим работы</h2>
+                <p><strong>Пн-Пт: 9:00 - 18:00</strong></p>
+                <p>Сб-Вс: выходной</p>
+            </div>
+        </div>
+
+        <!-- Карта -->
+        <section class="map-section">
+            <h2><i class="fas fa-map-marked-alt"></i> Карта проезда</h2>
+            
+            <div id="yandex-map"></div>
+            
+            <div class="contact-note">
+                <p><i class="fas fa-info-circle"></i> Для связи используйте онлайн-чат или контакты выше.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Компания "ТехноПрофи". Офис в Ростове-на-Дону.</p>
+            <p><a href="index.html">Вернуться на главную</a></p>
+        </div>
+    </footer>
+
+    <!-- Tawk.to виджет -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/696d5803c0ef74197c0bf2b3/1jf9hvjrr';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        // Инициализация Яндекс.Карты
+        ymaps.ready(init);
+        
+        function init() {
+            var myMap = new ymaps.Map("yandex-map", {
+                center: [47.225566, 39.695088],
+                zoom: 17,
+                controls: ['zoomControl']
+            });
+            
+            var officePlacemark = new ymaps.Placemark([47.225566, 39.695088], {
+                balloonContent: '<strong>Офис "ТехноПрофи"</strong><br>г. Ростов-на-Дону<br>пер. Доломановский, 53',
+                hintContent: 'Наш офис'
+            }, {
+                preset: 'islands#blueDotIcon',
+                iconColor: '#3498db'
+            });
+            
+            myMap.geoObjects.add(officePlacemark);
+            officePlacemark.balloon.open();
+        }
+    </script>
+</body>
+</html>
